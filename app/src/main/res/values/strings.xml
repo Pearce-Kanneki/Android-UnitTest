@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MVVM Test</string>
+    <string name="buy">購買</string>
+    <string name="number">數量:</string>
+</resources>

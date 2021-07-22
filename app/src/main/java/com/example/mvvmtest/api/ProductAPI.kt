@@ -1,0 +1,20 @@
+package com.example.mvvmtest.api
+
+import android.os.Handler
+import android.os.Looper
+
+class ProductAPI: IProductAPI {
+
+    override fun getProduct(productId:String, loadAPICallBack: IProductAPI.LoadAPICallBack) {
+        //模擬從API取得資料
+        val handler = Handler(Looper.myLooper()!!)
+        handler.postDelayed(Runnable {
+            val productResponse = ProductResponse()
+            productResponse.id = "pixel3"
+            productResponse.name = "Google Pixel 3"
+            productResponse.desc = "5.5吋螢幕"
+            productResponse.price = 27000
+            loadAPICallBack.onGetResult(productResponse)
+        }, 1000)
+    }
+}
